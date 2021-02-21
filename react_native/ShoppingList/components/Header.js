@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Header() {
+const Header = ({ title }) => {
   return (
     <View style={styles.header}>
-      <Text style={styles.text}>Shopping List</Text>
+      <Text style={styles.text}>{title} </Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   header: {
@@ -21,3 +21,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default Header;
