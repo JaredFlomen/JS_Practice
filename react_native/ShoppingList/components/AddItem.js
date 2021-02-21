@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -8,11 +8,22 @@ import {
 } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-const AddItem = () => {
+const AddItem = ({ addItem }) => {
+  const [text, setText] = useState('');
   return (
     <View>
-      <TextInput placeholder='Add Item ..' style={styles.input} />
-      <TouchableOpacity style={styles.button}>
+      <TextInput
+        placeholder='Add Item ..'
+        style={styles.input}
+        onChangeText={textValue => setText(textValue)}
+      />
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          setText('');
+          addItem(text);
+        }}
+      >
         <Text style={styles.buttonText}>
           <Entypo name='plus' size={24} color='black' />
           Add Item
