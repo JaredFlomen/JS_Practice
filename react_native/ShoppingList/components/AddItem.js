@@ -20,7 +20,6 @@ const AddItem = ({ addItem }) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          setText('');
           addItem(text);
         }}
       >
