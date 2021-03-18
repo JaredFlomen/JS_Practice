@@ -10,22 +10,32 @@ import { Entypo } from '@expo/vector-icons';
 
 const AddItem = ({ addItem }) => {
   const [text, setText] = useState('');
+  const [weight, setWeight] = useState('');
   return (
     <View>
-      <TextInput
-        placeholder='Add Item ..'
-        style={styles.input}
-        onChangeText={textValue => setText(textValue)}
-      />
+      <View style={styles.viewContainer}>
+        <TextInput
+          placeholder='Ticker'
+          style={styles.input}
+          onChangeText={textValue => setText(textValue)}
+        />
+        <TextInput
+          placeholder='Weight'
+          style={styles.input}
+          onChangeText={textValue => setWeight(parseInt(textValue))}
+        />
+      </View>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          addItem(text);
+          addItem(text, weight);
+          setText('');
+          setWeight('');
         }}
       >
         <Text style={styles.buttonText}>
           <Entypo name='plus' size={24} color='black' />
-          Add Item
+          Add A Position
         </Text>
       </TouchableOpacity>
     </View>
@@ -37,6 +47,12 @@ const styles = StyleSheet.create({
     height: 60,
     padding: 8,
     fontSize: 16,
+  },
+  viewContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'space-around',
   },
   button: {
     backgroundColor: '#c2bad8',
