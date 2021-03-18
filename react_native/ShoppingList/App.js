@@ -6,6 +6,7 @@ import AddItem from './components/AddItem';
 import TotalWeight from './components/TotalWeight';
 import Overallocated from './components/Overallocated';
 import Chart from './components/Chart';
+import Title from './components/Title';
 
 const App = () => {
   const [items, setItems] = useState([
@@ -38,8 +39,9 @@ const App = () => {
   };
   return (
     <View style={styles.container}>
-      <Header title='Portfolios' />
+      <Header title='My Portfolio' />
       <AddItem addItem={addItem} />
+      <Title />
       <FlatList
         data={items}
         renderItem={({ item }) => (

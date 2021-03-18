@@ -55,9 +55,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   button: {
-    backgroundColor: '#c2bad8',
+    backgroundColor: '#Fab131',
     padding: 9,
     margin: 5,
+    borderRadius: 10,
   },
   buttonText: {
     color: 'darkslateblue',
