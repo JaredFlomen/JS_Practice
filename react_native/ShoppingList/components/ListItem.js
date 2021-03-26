@@ -2,12 +2,13 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-const ListItem = ({ item, deleteItem }) => {
+const ListItem = ({ item, deleteItem, price }) => {
   return (
     <TouchableOpacity style={styles.listItem}>
       <View style={styles.listItemView}>
         <Text style={styles.listItemText}>{item.text}</Text>
         <Text style={styles.listItemText}>{item.weight}%</Text>
+        <Text style={styles.listItemText}>${item.price}</Text>
         <FontAwesome name='edit' size={15} color='green' />
         <FontAwesome
           name='remove'

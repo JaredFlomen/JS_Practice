@@ -10,9 +10,9 @@ import Title from './components/Title';
 
 const App = () => {
   const [items, setItems] = useState([
-    { id: Math.random(), text: 'Test', weight: 5 },
-    { id: Math.random(), text: 'Test1', weight: 10 },
-    { id: Math.random(), text: 'Test2', weight: 15 },
+    { id: Math.random(), text: 'AAPL', weight: 5 },
+    { id: Math.random(), text: 'SHOP', weight: 10 },
+    { id: Math.random(), text: 'TSLA', weight: 15 },
   ]);
 
   const deleteItem = id => {
